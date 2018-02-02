@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { setFilter } from '../actions'
 
-export default class FilterLink extends Component {
+
+class FilterLink extends Component {
 
   render() {
 
@@ -25,3 +28,11 @@ export default class FilterLink extends Component {
     )
   }
 }
+
+function mapStateToProps(dispatch, ownProps){
+  return {
+    onClick : () => dispatch(setFilter(ownProps.filter))
+  }
+}
+
+export default connect(null, mapStateToProps)()

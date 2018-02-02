@@ -7,9 +7,9 @@ export default class Footer extends Component {
 
     return (<div className="tabs">
       <ul>
-        <FooterLink>All</FooterLink>
-        <FooterLink>New</FooterLink>
-        <FooterLink>Complated</FooterLink>
+        <FooterLink filter="SHOW_ALL">All</FooterLink>
+        <FooterLink filter="SHOW_NEW">New</FooterLink>
+        <FooterLink filter="SHOW_COMPLATED">Complated</FooterLink>
       </ul>
     </div>)
 
