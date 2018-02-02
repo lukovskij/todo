@@ -1,4 +1,4 @@
-export default function todos(state = [], action){ 
+export default function todos(state = [], action){
 	switch (action.type){
 		case 'ADD_TODO' : {
 			return [
@@ -9,6 +9,15 @@ export default function todos(state = [], action){
 				},
 				...state
 			]
+		}
+		case 'TOGGLE_TODO': {
+			return state.map( item =>
+				 item.id === action.id
+				 ? {
+					 ...item,
+					 complated : !item.complated
+				 } : item
+			)
 		}
 		default : {
       return state

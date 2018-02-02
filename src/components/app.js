@@ -8,8 +8,6 @@ import store from '../store'
 
 export default class App extends Component {
     render(){
-       const { text, complated, onToggle } = this.props;
-
         return (
 				<Provider store={store}>
 

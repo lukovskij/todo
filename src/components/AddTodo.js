@@ -22,7 +22,7 @@ class AddTodo extends Component{
 
      if(e.keyCode === ENTER_KEY){
 
-			this.props.addTodo(this.state.text)
+			this.props.todoAdd(this.state.text)
 
 			 this.setState({
 				 'text' : ''
@@ -36,9 +36,9 @@ class AddTodo extends Component{
 				<div className="field">
 					<label className="label">Todo Message</label>
 					<div className="control">
-					<input 
-							className='input' 
-							type="text" 
+					<input
+							className='input'
+							type="text"
 							placeholder="What needs to be done"
 							value={this.state.text}
 							onChange={this.handleTextChange}
@@ -51,7 +51,15 @@ class AddTodo extends Component{
 }
 
 function matchDispatchToProps(dispatch){
-	return bindActionCreators({addTodo : addTodo}, dispatch)
+	return {
+		todoAdd : bindActionCreators(addTodo, dispatch)
+	}
 }
 
-export default connect(matchDispatchToProps)(AddTodo)
+function mapStateToProps(state){
+	return {
+		todos : state.todo
+	}
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(AddTodo)
