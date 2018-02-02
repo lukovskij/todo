@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { toggleTodo } from '../actions'
 
 import Todo from './Todo';
@@ -35,10 +34,10 @@ function mapStateToProps(state){
 	    todo : state.todo
 	 }
 }
-function matchDispatchToProps(dispatch){
-  return {
-    toggleTodo : bindActionCreators(toggleTodo, dispatch)
-  }
-}
+// function matchDispatchToProps(dispatch){
+//   return {
+//     toggleTodo : bindActionCreators(toggleTodo, dispatch)
+//   }
+// }
 
-export default connect(mapStateToProps, matchDispatchToProps)(TodoList)
+export default connect(mapStateToProps, {toggleTodo})(TodoList)
