@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
+import Footer from './Footer';
 
 import store from '../store'
 
@@ -18,6 +19,7 @@ export default class App extends Component {
 							 <div className="content">
 							 <AddTodo></AddTodo>
 							 <TodoList></TodoList>
+               <Footer></Footer>
 							 </div>
 						</div>
 						</div>
